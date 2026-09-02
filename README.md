@@ -47,6 +47,25 @@ detail]. [Aspect ratio].
 
 Then edit conversationally: "Keep everything the same, but make the light warmer." Not a new prompt.
 
+## Claude Code slash command
+
+The repo ships a `/nano-banana` skill for [Claude Code](https://claude.com/claude-code). Give it a rough idea, it asks only the questions that change the prompt, writes one prompt by these guides, copies it to your clipboard, and tells you which model and settings to use.
+
+Inside this repo it works as is:
+
+```
+claude
+/nano-banana a hero image for a coffee brand landing page, warm, with room for a headline
+```
+
+To use it from any directory, copy the skill into your user skills:
+
+```bash
+cp -r .claude/skills/nano-banana ~/.claude/skills/
+```
+
+Clipboard support: `pbcopy` on macOS, `wl-copy` or `xclip` on Linux, `clip.exe` on WSL. Source: [.claude/skills/nano-banana/SKILL.md](.claude/skills/nano-banana/SKILL.md).
+
 ## Sources this guide leans on
 
 - Google's image generation docs: https://ai.google.dev/gemini-api/docs/image-generation
